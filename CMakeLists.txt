@@ -51,14 +51,7 @@ add_feature_info("Icon generation" ${WITH_ICON_GENERATION} "for 24x24 icons.
    This feature requires Python 3 and the lxml Python 3 module."
 ) # The exact amount of indentation used in the line(s) above is intentional
 
-# When cross-compiling, we should compile qrcAlias natively (against a native Qt build)
-if (CMAKE_CROSSCOMPILING)
-    set(BINARY_ICONS_RESOURCE_OPTION_DEFAULT OFF)
-else()
-    set(BINARY_ICONS_RESOURCE_OPTION_DEFAULT ON)
-endif()
-
-option(BINARY_ICONS_RESOURCE "Install Qt binary resource files containing breeze icons (breeze-icons.rcc, breeze-icons-dark.rcc)" ${BINARY_ICONS_RESOURCE_OPTION_DEFAULT})
+option(BINARY_ICONS_RESOURCE "Install Qt binary resource files containing breeze icons (breeze-icons.rcc, breeze-icons-dark.rcc)" OFF)
 option(SKIP_INSTALL_ICONS "Skip installing the icons files" OFF)
 
 if(BINARY_ICONS_RESOURCE)
